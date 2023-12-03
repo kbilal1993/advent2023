@@ -1,14 +1,12 @@
 # Day 2:
 
-# Scenario
-There's a bag of coloured cubes. You are shown a random subset of these cubes in 3 different sets.
-You are given a list of potential games. You need to test which ones would be possible with a given set of cubes.
+# Comments
+First time using unit tests while doing Advent of Code work. Should have done this earlier. I like how easy Rust makes this.
 
-Each game entry looks like this:
-game n: <game>; <game>; <game>
+Rust is a bit weird with iterations. I understand why I need such big chains of .collect::<Vec<_>>() and .parse().unwrap() but it seems a bit overkill. This specific line gave me issues:
 
-Each <game> looks like this:
-3 blue, 4 red, 1 green
+`temp_handful_strings = temp_split[1].split(";").collect::<Vec<_>>().iter().map(|x| x.trim()).collect();`
 
+It's supposed to take the list of handfuls pulled as part of the game, and turn them into individual strings. Maybe there's an easier way of doing that.
 
-You only have 12 red cubes, 13 green cubes and 14 blue cubes. Find all games that are possible given the input and add up the IDs.
+My hands are freezing. Hard to type with cold hands.
